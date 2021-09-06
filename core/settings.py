@@ -1,11 +1,20 @@
 from pathlib import Path
 import os
+import environ
+
+#Llamamos a django-environ
+#Crear variables
+env = environ.Env()
+
+#leer variables
+environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-ux)#!ip)n_+jzdke@%y0_lwnfo%n_(+s$oi_fxmq)it77ge@-&'
+#Asi se proteje las variables de entorno
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
