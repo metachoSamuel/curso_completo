@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     
     'core',
     'blog',
+    'tailwind',
+    'theme',
 ]
 
 MIDDLEWARE = [
@@ -42,6 +44,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+#Configurando tailwind
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+NPM_BIN_PATH = '/usr/bin/npm'
 
 ROOT_URLCONF = 'core.urls'
 
